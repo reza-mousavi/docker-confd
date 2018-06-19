@@ -1,0 +1,10 @@
+A simple repository to use confd on docker.
+
+It checks for variables from several resources, such as env, etcd.
+
+To see how it works
+1) Have maven installed.
+2) Have docker installed and running.
+3) Run mvn clean install
+4) Run the image -- docker run -d --name nginx rezamda/com.reza.sample-docker-confd:1.0-SNAPSHOT
+5) Verify a file is created, and configured in /tmp/myconfig.conf

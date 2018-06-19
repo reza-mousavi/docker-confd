@@ -1,0 +1,7 @@
+[template]
+src = "first.tmpl"
+dest = "/tmp/myconfig.conf"
+keys = [
+    "/command/line/param",
+	"COMMAND_LINE_PARAM"
+]
