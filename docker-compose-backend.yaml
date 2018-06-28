@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  nginx:
+      image: rezamda/com.reza.sample.docker-nginx:latest
+      container_name: nginx
+      environment:
+        CONFD_BACKEND: 'http://vault:8200'
+        CONFD_ROLE_ID: '7aeffb09-54b8-d1d5-b0e5-87fac7b1005e'
+        CONFD_SECRET_ID: 'c66dbbe4-0171-abe8-9061-257ca3bd48bb'
+      networks:
+        - http-default
+networks:
+  http-default:
