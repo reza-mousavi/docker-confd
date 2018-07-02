@@ -1,17 +1,23 @@
 version: '3.2'
 
 services:
-  vault:
-      image: rezamda/com.reza.sample.docker-vault:latest
-      container_name: vault
+  vault-server:
+      image: rezamda/com.reza.sample.docker-vault-server:latest
+      container_name: vault-server
       networks:
          - http-default
       volumes:
-          - ./vault/data:/vault/custom/data:ro
-          - ./vault/script:/vault/custom/script:rw
           - ./share/file:/vault/file:rw
-          - ./share/secret:/vault/custom/secret:rw
       ports:
          - "8200:8200"
+  vault-client:
+      image: rezamda/com.reza.sample.docker-vault-client:latest
+      container_name: vault-client
+      networks:
+         - http-default
+      volumes:
+          - ./share/secret:/vault/client/secret:rw
+      depends_on:
+        - vault-server
 networks:
   http-default:

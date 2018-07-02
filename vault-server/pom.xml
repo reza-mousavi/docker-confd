@@ -4,9 +4,11 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>vault</artifactId>
+	<artifactId>vault-server</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<name>Vault Server</name>
+	<description>Vault Server</description>
 
 	<parent>
 		<groupId>com.reza.sample.docker</groupId>
@@ -94,6 +96,9 @@
 					<repository>rezamda/${project.groupId}-${project.artifactId}</repository>
 					<tag>${project.version}</tag>
 					<noCache>true</noCache>
+					<buildArgs>
+						<VAULT_VERSION>${docker.vault.version}</VAULT_VERSION>
+					</buildArgs>
 				</configuration>
 			</plugin>
 		</plugins>

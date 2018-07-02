@@ -10,12 +10,14 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>vault</module>
+		<module>vault-server</module>
+		<module>vault-client</module>
 		<module>nginx</module>
 	</modules>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<docker.vault.version>0.10.2</docker.vault.version>
 	</properties>
 </project>
