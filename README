@@ -1,6 +1,6 @@
 A simple repository to use confd on docker.
 
-It checks for variables from several resources, such as env, etcd.
+It checks for variables from several resources, such as env, vault.
 
 To see how it works
 1) Have maven installed.
@@ -11,5 +11,5 @@ To see how it works
 	2.2) run run-backend.bat.
 	2.2) Access http://localhost:8080/hello/
 	2.3) Change vault values through web user interface, http://localhost:8200/,
-			restart tomcat instance, see the hello message is changed
+			restart tomcat instance, docker restart tomcat, see the hello message is changed.
 			2.3.1) For vault secret info, check ./share/secret folder.
