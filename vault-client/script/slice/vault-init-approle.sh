@@ -9,4 +9,8 @@ else
 	echo "App-role not enabled"
 fi
 vault auth enable approle
-sh $VAULT_SCRIPT_PATH/slice/vault-create-approle.sh read-config-approle read-config-policy
+for entry in $(find "$VAULT_DATA_PATH"/approle -type f )
+do
+	echo "Writing approle : "${entry}
+    $VAULT_SCRIPT_PATH/slice/vault-create-approle.sh "${entry}"
+done
