@@ -94,7 +94,6 @@
 				</executions>
 				<configuration>
 					<repository>rezamda/${project.groupId}-${project.artifactId}</repository>
-					<tag>${project.version}</tag>
 					<noCache>true</noCache>
 					<buildArgs>
 						<VAULT_VERSION>${docker.vault.version}</VAULT_VERSION>

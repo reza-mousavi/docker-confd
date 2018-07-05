@@ -6,8 +6,20 @@ services:
       container_name: nginx
       environment:
         CONFD_BACKEND: 'http://vault:8200'
-        CONFD_ROLE_ID: '7aeffb09-54b8-d1d5-b0e5-87fac7b1005e'
-        CONFD_SECRET_ID: 'c66dbbe4-0171-abe8-9061-257ca3bd48bb'
+        CONFD_ROLE_ID: '107335e8-ab65-2d90-0d75-593f3db67558'
+        CONFD_SECRET_ID: 'faf06d1a-feba-0b37-efda-3a6e13b5dbe5'
+      networks:
+        - http-default
+  tomcat:
+      image: rezamda/com.reza.sample.docker-tomcat:latest
+      container_name: tomcat
+      environment:
+        CONFD_BACKEND: 'http://vault-server:8200'
+        CONFD_BACKEND_TYPE: 'vault'
+        CONFD_ROLE_ID: '107335e8-ab65-2d90-0d75-593f3db67558'
+        CONFD_SECRET_ID: 'faf06d1a-feba-0b37-efda-3a6e13b5dbe5'
+      ports:
+        - "8080:8080"
       networks:
         - http-default
 networks:

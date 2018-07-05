@@ -1,0 +1,6 @@
+[template]
+src = "application.properties.tmpl"
+dest = "$CATALINA_HOME/application.properties"
+keys = [
+    "/com/reza/sample",
+]

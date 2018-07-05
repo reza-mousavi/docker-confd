@@ -10,8 +10,10 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>rest</module>
 		<module>vault-server</module>
 		<module>vault-client</module>
+		<module>docker-rest</module>
 		<module>nginx</module>
 	</modules>
 
