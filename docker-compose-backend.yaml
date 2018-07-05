@@ -7,8 +7,10 @@ services:
       environment:
         CONFD_BACKEND: 'http://vault-server:8200'
         CONFD_BACKEND_TYPE: 'vault'
-        CONFD_ROLE_ID: '107335e8-ab65-2d90-0d75-593f3db67558'
-        CONFD_SECRET_ID: 'faf06d1a-feba-0b37-efda-3a6e13b5dbe5'
+        CONFD_APPROLE: 'read-config-approle'
+      volumes:
+          - ./share/secret/.read-config-approle_role_id:/vault/secret/.read-config-approle_role_id:ro
+          - ./share/secret/.read-config-approle_secret_id:/vault/secret/.read-config-approle_secret_id:ro
       networks:
         - http-default
   tomcat:
@@ -17,8 +19,10 @@ services:
       environment:
         CONFD_BACKEND: 'http://vault-server:8200'
         CONFD_BACKEND_TYPE: 'vault'
-        CONFD_ROLE_ID: '107335e8-ab65-2d90-0d75-593f3db67558'
-        CONFD_SECRET_ID: 'faf06d1a-feba-0b37-efda-3a6e13b5dbe5'
+        CONFD_APPROLE: 'read-config-approle'
+      volumes:
+          - ./share/secret/.read-config-approle_role_id:/vault/secret/.read-config-approle_role_id:ro
+          - ./share/secret/.read-config-approle_secret_id:/vault/secret/.read-config-approle_secret_id:ro
       ports:
         - "8080:8080"
       networks:
