@@ -1,4 +1,5 @@
 #!/bin/sh
+echo "Substituting environment variables for : /etc/confd/confd.toml.unprocessed"
 envsubst < /etc/confd/confd.toml.unprocessed > /etc/confd/confd.toml
 for entry in /etc/confd/conf.d/*
 do

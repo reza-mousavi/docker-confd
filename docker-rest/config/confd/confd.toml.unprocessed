@@ -1,6 +1,11 @@
-backend = "vault"
 confdir = "/etc/confd"
 log-level = "debug"
 interval = 600
 auth_type="app-role"
 prefix = "/secret"
+backend = "$CONFD_BACKEND_TYPE"
+role_id="$CONFD_ROLE_ID"
+secret_id="$CONFD_SECRET_ID"
+nodes = [
+  "$CONFD_BACKEND"
+]

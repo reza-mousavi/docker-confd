@@ -95,6 +95,7 @@
 					<noCache>true</noCache>
 					<buildArgs>
 						<COMMAND_LINE_PARAM_ARG>reza</COMMAND_LINE_PARAM_ARG>
+						<PORT>80</PORT>
 					</buildArgs>
 				</configuration>
 			</plugin>
