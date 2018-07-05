@@ -9,4 +9,7 @@ To see how it works
 4) Run the images
 	2.1) run run-config.bat.
 	2.2) run run-backend.bat.
-5) Verify a file is created, and configured in /tmp/myconfig.conf
+	2.2) Access http://localhost:8080/hello/
+	2.3) Change vault values through web user interface, http://localhost:8200/,
+			restart tomcat instance, see the hello message is changed
+			2.3.1) For vault secret info, check ./share/secret folder.
